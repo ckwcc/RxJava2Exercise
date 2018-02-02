@@ -47,7 +47,7 @@ import io.reactivex.disposables.Disposable;
 
 
  */
-public class MainActivity extends AppCompatActivity {
+public class ObservableActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

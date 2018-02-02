@@ -24,6 +24,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
+ * 线程的调度、切换
  * 简单的来说, subscribeOn() 指定的是上游发送事件的线程, observeOn() 指定的是下游接收事件的线程.
 
  多次指定上游的线程只有第一次指定的有效, 也就是说多次调用subscribeOn() 只有第一次的有效, 其余的会被忽略.
@@ -40,7 +41,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  这些内置的Scheduler已经足够满足我们开发的需求, 因此我们应该使用内置的这些选项, 在RxJava内部使用的是线程池来维护这些线程, 所有效率也比较高.
 
  */
-public class Main2Activity extends AppCompatActivity {
+public class ThreadSwitchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,22 +97,22 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
-//    private static Retrofit create() {
-//        OkHttpClient.Builder builder = new OkHttpClient().newBuilder();
-//        builder.readTimeout(10, TimeUnit.SECONDS);
-//        builder.connectTimeout(9, TimeUnit.SECONDS);
-//
-//        if (BuildConfig.DEBUG) {
-//            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-//            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-//            builder.addInterceptor(interceptor);
-//        }
-//
-//        return new Retrofit.Builder().baseUrl( "http://10.71.33.67:80")
-//                .client(builder.build())
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-//                .build();
-//    }
+    private static Retrofit create() {
+        OkHttpClient.Builder builder = new OkHttpClient().newBuilder();
+        builder.readTimeout(10, TimeUnit.SECONDS);
+        builder.connectTimeout(9, TimeUnit.SECONDS);
+
+        if (BuildConfig.DEBUG) {
+            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+            builder.addInterceptor(interceptor);
+        }
+
+        return new Retrofit.Builder().baseUrl( "http://10.71.33.67:80")
+                .client(builder.build())
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+    }
 
 }
