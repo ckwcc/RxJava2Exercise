@@ -1,1 +1,2 @@
 # Rxjava2Exercise
+这是一个自己用于深入了解Rxjava2的练习demo
