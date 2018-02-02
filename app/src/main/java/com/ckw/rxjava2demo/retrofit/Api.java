@@ -16,4 +16,12 @@ public interface Api {
     @GET("xixihaha")
     Observable<String> register(@Body String request);
 
+    @GET
+    Observable<String> getUserBaseInfo(@Body String request);
+
+    @GET
+    Observable<String> getUserExtraInfo(@Body String request);
+
+
+
 }

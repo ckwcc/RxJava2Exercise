@@ -9,11 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ObservableActivity"></activity>
-        <activity android:name=".ThreadSwitchActivity"></activity>
+        <activity android:name=".ObservableActivity" />
+        <activity android:name=".ThreadSwitchActivity" />
         <activity android:name=".FlatMapActivity">
+
         </activity>
         <activity android:name=".ZipActivity">
+
+        </activity>
+        <activity android:name=".FlowableActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
